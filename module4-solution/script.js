@@ -85,11 +85,14 @@ WARNING!!! WARNING!!!
   // Call mapNamesGreetings function for each element of the names array
   var pairedArray = names.map(pairNameGreeting);
 
-  // Loop through each greeting/name pair in new array and print to console
-  // Note using the array of from ES6 for cleaner code
-  for (pair of pairedArray) {
-    console.log(pair);
-  }
+  // Log each greeting/name pair in new array (using inline function since there's no requirement around this)
+  pairedArray.map(function (pair) {console.log(pair)});
+
+  // // Loop through each greeting/name pair in new array and print to console
+  // // Note using the array of from ES6 for cleaner code - replaced by map function from above
+  // for (pair of pairedArray) {
+  //   console.log(pair);
+  // }
   
    // Set initial value as per requirement
    var initialValue = {
