@@ -1,0 +1,13 @@
+.validLengthText {
+    color: green;
+}
+.validLengthBorder {
+    border-color: green;
+}
+
+.invalidLengthText {
+    color: red;
+}
+.invalidLengthBorder {
+    border-color: red;
+}

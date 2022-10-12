@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="LunchCheck">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/custom.css">
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+<body>
+   <div class="container" ng-controller='LunchCheckController'>
+     <h1>Lunch Checker</h1>
+
+         <div class="form-group">
+           <!-- Set border using interpolation combined with Border text-->
+             <input id="lunch-menu" type="text"
+             placeholder="list comma separated dishes you usually have for lunch"
+             class="form-control {{messageType}}Border"
+             ng-model="lunchListString">
+         </div>
+         <div class="form-group">
+             <button class="btn btn-default" ng-click="checkLunchList()">Check If Too Much</button>
+         </div>
+          <!-- Set font color using interpolation combined with Text text-->
+         <div class="form-group message {{messageType}}Text">
+           {{messagePlaceholder}}
+         </div>
+   </div>
+
+</body>
+</html>
