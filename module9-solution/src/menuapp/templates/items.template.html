@@ -1,0 +1,9 @@
+<ul>
+    <li ng-repeat="item in $ctrl.itemList">
+            <span class="menuItem">{{ item.name }}</span>
+            <!-- Included description for more information on item -->
+            <!-- Note: Included ng-if to only show colon if description exists -->
+            <span ng-if="item.description">: {{ item.description }}</span>
+        </a>
+    </li>
+  </ul>

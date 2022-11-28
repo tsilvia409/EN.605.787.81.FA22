@@ -1,0 +1,32 @@
+h1 {
+  margin-bottom: 30px;
+}
+
+/* Custom CSS for items formatting */
+.menuItem {
+  color: darkgreen;
+  font-weight: 900;
+}
+
+/* Custom CSS for table and error */
+table {
+  border-collapse: collapse;
+  border: 1px solid grey;
+}
+
+th, td {
+  border: 1px solid grey;
+  padding: 10px 20px 10px 20px;
+}
+
+th {
+  background-color: lightgrey;
+}
+
+.error {
+  color: red;
+  font-size: 17px;
+  font-style: italic;
+  text-shadow: rgba(147, 147, 147, 0.2);
+
+}
