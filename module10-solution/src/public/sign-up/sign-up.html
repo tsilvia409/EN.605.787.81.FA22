@@ -1,0 +1,79 @@
+<div class="container">
+    <h2>Sign Up</h2>
+    <!-- Built off of lecture 42's registration form -->
+    <fieldset id="sign-up-form">
+        <form name='regForm' novalidate> 
+            <div class="form-group">
+                <label for="reg-first-name">First Name: </label>
+                <input type="text" name="fName" placeholder="Enter first name"
+                ng-model="signUpCtrl.user.fName"
+                ng-pattern="/^[a-zA-Z\s]*$/"
+                id="reg-first-name"
+                required>
+                
+                <span ng-if="regForm.fName.$invalid && regForm.fName.$touched">
+                    First name cannot be blank and must contain letters only
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="reg-last-name">Last Name: </label>
+                <input type="text" name="lName" placeholder="Enter last name"
+                ng-model="signUpCtrl.user.lName"
+                ng-pattern="/^[a-zA-Z\s]*$/"
+                id="reg-last-name"
+                required>
+                <span ng-if="regForm.lName.$invalid && regForm.lName.$touched">
+                    Last name cannot be blank and must contain letters only
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label for="reg-email">Email Address: </label>
+                <input type="email" name="email" placeholder="handle@domain"
+                ng-model="signUpCtrl.user.email"
+                id="reg-email"
+                required>
+                <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+                    You must enter a valid email address in handle@domain format
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="reg-phone">Phone Number: </label>
+                <input type="text" name="phone" placeholder="###-###-####"
+                    ng-model="signUpCtrl.user.phone"
+                    pattern="(\d{3})-(\d{3})-(\d{4})"
+                    id="reg-phone"
+                    required>
+                <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+                    You must enter a phone number in the format ###-###-####
+                </span>
+            </div>
+            <div class="form-group">
+                <label for="reg-dish">Menu # of Your Favorite Dish: </label>
+                <input type="text" name="dish" placeholder="e.g. L2"
+                    ng-model="signUpCtrl.user.dish"
+                    id="reg-dish"
+                    class="numInput"
+                    check-dish
+                    required>
+                <span ng-if="regForm.dish.$invalid && regForm.dish.$touched">
+                    No such menu number exists
+                </span>
+            </div>
+            <br>
+
+            <button
+                id="reg-submit"
+                ng-disabled="regForm.$invalid"
+                ng-click="signUpCtrl.submit()">Submit
+            </button>
+
+            <div id="info">
+                <p class="saved-pad" ng-if="signUpCtrl.completed && !signUpCtrl.error">Your information has been saved.</p>
+                <p class="failed-pad" ng-if="signUpCtrl.error">Registration failed.</p>
+                <!-- Will not be shown but used to maintain spacing -->
+                <p class="invisible saved-pad" ng-hide="signUpCtrl.completed">Information not saved yet.</p>
+            </div>
+        </form>
+    </fieldset>
+</div>

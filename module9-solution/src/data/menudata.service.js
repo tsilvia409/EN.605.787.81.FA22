@@ -22,7 +22,6 @@
 
        // Get list of menu items in category based on catShortName
        service.getItemsForCategory = function(categoryShortName) {
-        console.log("ENTERED HERE");
         return $http({
             method: "GET",
             url: (ApiBasePath + "/menu_items/" + categoryShortName + ".json")
